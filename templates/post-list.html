@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Posts</h1><br/>
+    {% for page in paginator.pages %}
+        <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2> - {{ page.date | date(format="%d/%m/%Y") }}<br/>
+        {{ page.description | safe}}<br/>
+        <br/>
+    {% endfor %}
+    {% if paginator.previous %}
+        <a href="{{ paginator.previous }}"><-</a>
+    {% endif %}
+    {% if paginator.next %}
+        <a href="{{ paginator.next }}">-></a>
+    {% endif %}
+
+{% endblock content %}

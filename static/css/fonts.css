@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "Lato Latin";
+    src: url("/fonts/LatoLatin-Regular.woff2") format('woff2');
+}
+
+body {
+    font-family: 'Lato Latin', sans-serif;
+}

@@ -1,0 +1,19 @@
+<header>
+    <div class="leftside">
+        <img src="/img/logo.png" style="height:64px; width:64px;">
+        <div class="bannertext">
+            <span id="sitetitle">{{ config.title }}</span>
+            <br/><span id="subtitle">{{ config.extra.subtitle }}</span>
+        </div>
+    </div>
+    <input id="dropdown-toggle" type="checkbox"/>
+    <label class="dropdown-button-area" for="dropdown-toggle"></label>
+    <nav>
+        <ul>
+            {% for menu in config.extra.menu -%}
+            {% set menu_link = menu.url | replace(from="$BASE_URL", to=config.base_url) -%}
+            <li><a{% if current_url and current_url | trim_end_matches(pat="/") == menu_link %} class="active"{% endif %} href={{ menu_link | safe }}>{{ menu.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+</header>

@@ -1,0 +1,12 @@
+name = "Cyberparty Site Theme"
+description = "Cyberparty Site Theme"
+license = "MIT"
+homepage = "https://github.com/cyberparty/cyberparty-site-theme"
+min_version = "0.1.0"
+demo = ""
+
+[extra]
+
+[author]
+name = "Joseph Cole"
+homepage = "https://cyberparty.me"
