@@ -12,5 +12,5 @@ This theme is built primarily for my own purposes rather than mass adoption and 
 
 ## Credits
 
-This site includes and uses the [Lato](https://www.latofonts.com/) font by Łukasz Dziedzic, please see `/content/static/fonts/OFL.txt` for its respective license.
+This site includes and uses the [Lato](https://www.latofonts.com/) font by Łukasz Dziedzic, please see `/static/fonts/OFL.txt` for its respective license.
 The default logo image is by [Antoni Skhraba](https://www.pexels.com/@shkrabaanthony/).
