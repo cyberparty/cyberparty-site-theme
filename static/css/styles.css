@@ -56,11 +56,6 @@ h2 {
 	color: #bebebe;
 }
 
-.header-bg {
-	background-image: url("/img/banner.png");
-	filter: blur(8px);
-}
-
 header {
 	display: flex;
 	flex-wrap: wrap;
