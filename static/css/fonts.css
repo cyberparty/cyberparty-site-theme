@@ -3,6 +3,18 @@
     src: url("/fonts/LatoLatin-Regular.woff2") format('woff2');
 }
 
+@font-face {
+    font-family: "Lato Latin";
+    src: url("/fonts/LatoLatin-Bold.woff2") format('woff2');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Lato Latin";
+    src: url("/fonts/LatoLatin-Italic.woff2") format('woff2');
+    font-style: italic;
+}
+
 body {
     font-family: 'Lato Latin', sans-serif;
 }
