@@ -30,11 +30,23 @@ h2 {
 	font-size: 20px;
 }
 
+.leftside{
+	display: flex;
+	flex: 1 1 0;
+	flex-direction: row;
+	align-items: center;
+	gap: 0.5em;
+	max-width: fit-content;
+	min-width: 0;
+}
 
 .bannertext {
-	display: block;
-	flex: 1 1 0;
+	display: flex;
+	flex-direction: column;
 	min-width: 0;
+}
+
+#sitetitle, #subtitle {
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
