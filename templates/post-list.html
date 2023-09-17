@@ -3,7 +3,7 @@
 {% block content %}
     <h1>Posts</h1><br/>
     {% for page in paginator.pages %}
-        <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2> - {{ page.date | date(format="%d/%m/%Y") }}<br/>
+        <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2> - <span style="color: #bebebe; font-style: italic;">{{ page.date | date(format="%d/%m/%Y") }}</span><br/>
         {{ page.description | safe}}<br/>
         <br/>
     {% endfor %}
