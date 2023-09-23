@@ -3,7 +3,7 @@
         <img src="/img/logo.png" style="height:64px; width:64px;">
         <div class="bannertext">
             <span id="sitetitle">{{ config.title }}</span>
-            <span id="subtitle">{{ config.extra.subtitle }}</span>
+            {% if config.extra.subtitle != "" %}<span id="subtitle">{{ config.extra.subtitle }}</span>{% endif %}
         </div>
     </div>
     <input id="dropdown-toggle" type="checkbox"/>
