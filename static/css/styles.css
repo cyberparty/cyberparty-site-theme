@@ -24,8 +24,8 @@ h1 {
 	margin: 0 0 10px 0;
 	font-size: 26px;
 }
+
 h2 {
-	display: inline-flex;
 	margin: 0 0 5px 0;
 	font-size: 20px;
 }
@@ -38,6 +38,12 @@ h2 {
 	gap: 0.5em;
 	max-width: fit-content;
 	min-width: 0;
+}
+
+.logo {
+	width:64px;
+	height:64px;
+	border-radius: 50%;
 }
 
 .bannertext {
@@ -97,17 +103,11 @@ nav a:hover {
 	color: white;
 }
 
-.main {
-	display: flex;
-	flex-flow: column;
-	flex: 1 1 auto;
-}
-
-.content {
+main {
 	padding: 1em;
 }
 
-.content a, .content a:visited{
+main a, main a:visited{
 	color: white;
 }
 
@@ -132,6 +132,11 @@ nav a:hover {
 .dropdown-button-icon {
 	display: flex;
 	justify-content: center;
+}
+
+.footnote-definition p{
+	display: inline-block;
+	margin: auto;
 }
 
 @media (max-width: 550px) {

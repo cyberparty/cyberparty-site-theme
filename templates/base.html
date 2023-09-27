@@ -6,14 +6,11 @@
 
 <body>
     {% include "partials/header.html" %}
-    <div class="main">
-        <div class="content">
-            {% block content %}
-                Default content
-            {% endblock content %}
-        </div>
-    </div>
+    <main>
+        {% block content %}
+            Default content
+        {% endblock content %}
+    </main>
     <!-- {% include "partials/footer.html" %} -->
 </body>
-
 </html>
