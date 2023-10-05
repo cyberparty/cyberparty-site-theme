@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Posts</h1><br/>
+    <h1>Posts</h1>
     {% for page in paginator.pages %}
-        <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2> - <span style="color: #bebebe; font-style: italic;">{{ page.date | date(format="%d/%m/%Y") }}</span><br/>
-        {{ page.description | safe}}<br/>
-        <br/>
+        <section>
+            <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+            <div class="faded">{{ page.date | date(format="%d/%m/%Y") }}</div>
+            {{ page.description | safe}}
+        </section>
     {% endfor %}
     {% if paginator.previous %}
         <a href="{{ paginator.previous }}"><-</a>

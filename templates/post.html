@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>{{ page.title | safe}}</h1>
-    <span style="color: #bebebe">{{ page.date }}</span>
+    <div class="titlearea">
+        <h1>{{ page.title | safe}}</h1>
+        <span class="faded">{{ page.date }}</span>
+    </div>
     {{ page.content | safe}}
 {% endblock content %}
