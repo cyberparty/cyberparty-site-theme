@@ -1,3 +1,13 @@
+:root {
+	--outer-background: #191919;
+	--body-background: #232323;
+	--header-background: #323232;
+	--content-colour: #e9e9e9;
+	--content-faded-colour: #bebebe;
+	--content-highlight-colour: #383838;
+}
+
+/* main body stuff */
 html, body
 {
 	margin: 0 auto;
@@ -6,7 +16,7 @@ html, body
 
 html
 {
-	background-color: #191919;
+	background-color: var(--outer-background);
 	height: 100%;
 }
 
@@ -15,19 +25,22 @@ body {
 	flex-direction: column;
 	max-width: 1000px;
 	min-height: 100%;
-	color: white;
-	background-color: #232323;
+	color: var(--content-colour);
+	background-color: var(--body-background);
 	box-shadow: 0 0 10px rgba(0,0,0,.2);
 }
 
-h1 {
-	margin: 0 0 10px 0;
-	font-size: 26px;
-}
-
-h2 {
-	margin: 0 0 5px 0;
-	font-size: 20px;
+/* styling of header and its contents */
+header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5em;
+	background-color: var(--header-background);
+	border-radius: 5px;
+	margin: 0.25em;
+	gap: 0.5em;
 }
 
 .leftside{
@@ -59,24 +72,12 @@ h2 {
 }
 
 #sitetitle {
-	font-size: 24px;
+	font-size: 1.5em;
 	font-weight: bold;
 }
 
 #subtitle {
-	color: #bebebe;
-}
-
-header {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0.5em;
-	background-color: #323232;
-	border-radius: 5px;
-	margin: 0.25em;
-	gap: 0.5em;
+	color: var(--content-faded-colour)
 }
 
 nav ul {
@@ -90,7 +91,7 @@ nav li a{
 	display: flex;
 	padding: 0.5em;
 	text-decoration: none;
-	color: #bebebe;
+	color: var(--content-faded-colour)
 }
 
 nav a:hover {
@@ -100,15 +101,10 @@ nav a:hover {
 }
 
 .active {
-	color: white;
+	color: var(--content-colour);
 }
-
-main {
-	padding: 1em;
-}
-
-main a, main a:visited{
-	color: white;
+.faded {
+	color: var(--content-faded-colour);
 }
 
 #dropdown-toggle {
@@ -134,10 +130,98 @@ main a, main a:visited{
 	justify-content: center;
 }
 
+main {
+	padding: 1em;
+}
+
+main a, main a:visited{
+	color: var(--content-colour);
+}
+
+.titlearea
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.titlearea h1
+{
+	margin: 0;
+}
+
+section{
+	margin: 1em 0;
+}
+section h2{
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+	margin: 10px 0;
+}
+h1 {font-size: 1.6em;}
+h2 {font-size: 1.25em;}
+h3 {font-size: 1.1em;}
+
+code{
+	background-color: #191919;
+	padding: 0.2em 0.3em;
+	border-radius: 5px;
+}
+pre{
+	display: block;
+	border-radius: 5px;
+}
+pre code{
+	display: block;
+	background: none;
+	padding: 0.5em;
+	overflow-x: scroll;
+}
+
+pre[data-lang]::before {
+	content: attr(data-lang);
+	text-transform: uppercase;
+	background-color: var(--content-colour);
+	color: black;
+	border-radius: 5px 5px 0 0;
+	padding: 0.2em 0.3em;
+	display: block;
+}
+
+
+blockquote{
+	border-left: 3px solid;
+	border-radius: 3px;
+	padding: 0 0.5em;
+	margin: 1em;
+}
+
+table{
+	border-radius: 5px;
+	overflow: hidden;
+	border-spacing: 0;
+	border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+th, td{
+	padding: 0.25em;
+}
+
+th{
+	background-color: rgba(255, 255, 255, 0.15);
+}
+
+.footnote-definition {
+	border-top: 1px solid var(--content-colour);
+	padding: 1em 0;
+}
 .footnote-definition p{
 	display: inline-block;
 	margin: auto;
 }
+
 
 @media (max-width: 550px) {
 

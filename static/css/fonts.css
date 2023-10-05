@@ -17,4 +17,10 @@
 
 body {
     font-family: 'Lato Latin', sans-serif;
+    font-size: 100%;
+}
+
+code {
+    font-family: 'Courier', monospace;
+    font-size: 90%;
 }
