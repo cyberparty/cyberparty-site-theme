@@ -1,7 +1,7 @@
 # cyberparty-site-theme
 
 A Zola site theme built for my own upcoming site.  
-This theme is being built primarily for my own purposes rather than mass adoption and so features are usually added and/or modified at my own whim rather than in consideration for what others may want or like. Regardless, it's here in case anyone wants to use, fork, or modify it for their own purposes. It's still in development, though, wo things are still subject to change.
+This theme is being built primarily for my own purposes rather than mass adoption and so features are usually added and/or modified at my own whim rather than in consideration for what others may want or like. Regardless, it's here in case anyone wants to use, fork, or modify it for their own purposes. It's still in development, though, so things are still subject to change.
 It's worth noting I'm not incredibly experienced in web design, so be prepared to see some messy HTML/CSS!  
 
 ## Features
