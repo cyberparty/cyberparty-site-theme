@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://cyberparty-theme.netlify.app/"
+base_url = "https://cyberparty-theme.netlify.app"
 title = "Site Title"
 
 # Whether to automatically compile all Sass files in the sass directory
