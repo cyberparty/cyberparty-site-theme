@@ -135,16 +135,7 @@ nav a:hover {
 }
 
 main {
-	display: flex;
-	flex: 1 0 auto;
 	padding: 1em;
-}
-
-footer{
-	font-size: 85%;
-	display: block;
-	text-align: center;
-	margin: 0.5em;
 }
 
 .titlearea
