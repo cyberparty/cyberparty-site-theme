@@ -30,6 +30,9 @@ body {
 	background-color: var(--body-background);
 	box-shadow: 0 0 10px rgba(0,0,0,.2);
 }
+body a, main a:visited{
+	color: var(--content-colour);
+}
 
 /* styling of header and its contents */
 header {
@@ -132,11 +135,16 @@ nav a:hover {
 }
 
 main {
+	display: flex;
+	flex: 1 0 auto;
 	padding: 1em;
 }
 
-main a, main a:visited{
-	color: var(--content-colour);
+footer{
+	font-size: 85%;
+	display: block;
+	text-align: center;
+	margin: 0.5em;
 }
 
 .titlearea
@@ -178,7 +186,7 @@ pre code{
 	display: block;
 	background: none;
 	padding: 0.5em;
-	overflow-x: scroll;
+	overflow-x: auto;
 }
 
 pre[data-lang]::before {
