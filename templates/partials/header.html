@@ -11,8 +11,17 @@
     <nav>
         <ul>
             {% for menu in config.extra.menu -%}
-            {% set menu_link = menu.url | replace(from="$BASE_URL", to=config.base_url) -%}
-            <li><a{% if current_url and current_url | trim_end_matches(pat="/") == menu_link %} class="active"{% endif %} href={{ menu_link | safe }}>{{ menu.name }}</a></li>
+                {% set menu_link = menu.url | replace(from="$BASE_URL", to=config.base_url) -%}
+                {% set is_base = menu_link == config.base_url %}
+                {% set is_active = false %}
+                {% if current_url %}
+                    {% if is_base %}
+                        {% set is_active = current_url | trim_end_matches(pat="/") == menu_link %}
+                    {% else %}
+                        {% set is_active = current_url is starting_with(menu_link) %}
+                    {% endif %}
+                {% endif %}
+            <li><a{% if is_active %} class="active"{% endif %} href={{ menu_link | safe }}>{{ menu.name }}</a></li>
             {% endfor %}
         </ul>
     </nav>
