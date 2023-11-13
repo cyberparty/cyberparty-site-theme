@@ -1,0 +1,5 @@
+
+<figure {% if float and float in ["left","right"] %}class="{{ float }}"{% endif %}>
+    <img {% if width %}width="{{ width }}" {% endif %}src="{{ src }}" />
+    <figcaption>{{ body }}</figcaption>
+</figure>

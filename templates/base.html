@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 
 {% include "partials/head.html" %}
@@ -11,6 +10,21 @@
             Default content
         {% endblock content %}
     </main>
-    <!-- {% include "partials/footer.html" %} -->
+    {% if paginator %}
+    <div class="pagination-bar">
+    {% if paginator.previous %}
+        <a href="{{ paginator.previous }}">← Older</a>
+    {% else %}
+        <span class="blocked">← Older</span>
+    {% endif %}
+        <span>{{ paginator.current_index }}/{{ paginator.number_pagers }}</span>
+    {% if paginator.next %}
+        <a href="{{ paginator.next }}">Newer →</a>
+    {% else %}
+        <span class="blocked">Newer →</span>
+    {% endif %}
+    </div>
+    {% endif %}
+    {% include "partials/footer.html" %}
 </body>
 </html>
