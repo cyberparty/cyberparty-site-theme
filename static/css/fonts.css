@@ -1,26 +1,18 @@
 @font-face {
-    font-family: "Lato Latin";
-    src: url("/fonts/LatoLatin-Regular.woff2") format('woff2');
-}
-
-@font-face {
-    font-family: "Lato Latin";
-    src: url("/fonts/LatoLatin-Bold.woff2") format('woff2');
-    font-weight: bold;
-}
-
-@font-face {
-    font-family: "Lato Latin";
-    src: url("/fonts/LatoLatin-Italic.woff2") format('woff2');
-    font-style: italic;
+    font-display: swap;
+    font-family: "Inter";
+    src: url("/fonts/InterVariable.woff2") format('woff2');
 }
 
 body {
-    font-family: 'Lato Latin', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 100%;
+    line-height: 1.4;
+    font-synthesis: none;
 }
 
 code {
-    font-family: 'Courier', monospace;
+    font-family: 'Courier New', monospace;
     font-size: 90%;
 }
+

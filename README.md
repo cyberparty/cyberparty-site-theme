@@ -15,6 +15,6 @@ It's worth noting I'm not incredibly experienced in web design, so be prepared t
 
 ## Credits
 
-This site includes and uses the [Lato](https://www.latofonts.com/) font by Łukasz Dziedzic, please see `/static/fonts/OFL.txt` for its respective license.  
+This site includes and uses the [Inter](https://github.com/rsms/inter/) font by [Rasmus](https://github.com/rsms) and [the project's contributors](https://github.com/rsms/inter/graphs/contributors), please see `/static/fonts/OFL.txt` for its respective license.  
 The default logo image is by [Antoni Skhraba](https://www.pexels.com/@shkrabaanthony/).  
 The adaptive menu icons are from the [Feather Icons](https://feathericons.com/) collection.
