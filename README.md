@@ -8,7 +8,7 @@ It's worth noting I'm not incredibly experienced in web design, so be prepared t
 
 ## Features
 
-- Adaptive mobile-friendly menu
+- Adaptive mobile-friendly view
 - Consistent across pages (same header, only the main content panel is what changes)
 - No dependencies on any external frameworks
 - No JavaScript
@@ -16,5 +16,4 @@ It's worth noting I'm not incredibly experienced in web design, so be prepared t
 ## Credits
 
 This site includes and uses the [Inter](https://github.com/rsms/inter/) font by [Rasmus](https://github.com/rsms) and [the project's contributors](https://github.com/rsms/inter/graphs/contributors), please see `/static/fonts/OFL.txt` for its respective license.  
-The default logo image is by [Antoni Skhraba](https://www.pexels.com/@shkrabaanthony/).  
-The adaptive menu icons are from the [Feather Icons](https://feathericons.com/) collection.
+The default logo image is by [Antoni Skhraba](https://www.pexels.com/@shkrabaanthony/). 
