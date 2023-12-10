@@ -25,7 +25,7 @@ Mauris in aliquam sem fringilla ut morbi tincidunt augue. Volutpat odio facilisi
 Leo vel fringilla est ullamcorper eget nulla facilisi etiam. Lacinia quis vel eros donec ac odio tempor. Amet porttitor eget dolor morbi non. Ut enim blandit volutpat maecenas volutpat blandit. Id faucibus nisl tincidunt eget. Tellus molestie nunc non blandit massa enim nec. Turpis cursus in hac habitasse. Suscipit adipiscing bibendum est ultricies integer quis auctor. At urna condimentum mattis pellentesque id. Velit dignissim sodales ut eu.
 
 ## Images
-{% img(src="/img/photo.jpeg") %}
+{% img(src="/img/photo.png") %}
 
 ## Blockquote
 {% quote(author="Cave Johnson") %}
