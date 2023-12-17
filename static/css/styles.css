@@ -1,12 +1,16 @@
 :root {
-	--outer-background: #191919; /* background colour for outside the main body */
-	--body-background: #232323; /* background colour for main body */
-	--header-background: #303030; /* page header */
+	--outer-background-colour: #191919; /* background colour for outside the main body */
+	--body-background-colour: #232323; /* background colour for main body */
+	--header-background-colour: #303030; /* page header */
 	--content-title-colour: #f0f0f0; /* titles and headers */
 	--content-base-colour: #e7e7e7; /* main text */
 	--content-faded-colour: #a7a7a7; /* text with lower visual priority (e.g. post dates, subtitles, etc.) */
 	--content-blocked-colour: #717171; /* uninteractable nav element (e.g. paginator button when there's no further pages) */
 	--content-elevated-background: #383838; /* background for elements or portions thereof that are higher in visual priority or separate from the main flow (i.e. table header cells, asides, figure caption) */
+
+	--header-border-radius: 20px; /* border radius for nav bar */
+	--content-border-radius: 10px; /* border radius for content items (img, code, table, etc.) */
+	--button-border-radius: 10px; /* border radius for buttons when being hovered */
 }
 
 /* main body stuff */
@@ -18,7 +22,7 @@ html, body
 
 html
 {
-	background-color: var(--outer-background);
+	background-color: var(--outer-background-colour);
 	height: 100%;
 	scrollbar-gutter: stable;
 }
@@ -30,7 +34,7 @@ body {
 	max-width: 880px;
 	min-height: 100%;
 	color: var(--content-base-colour);
-	background-color: var(--body-background);
+	background-color: var(--body-background-colour);
 	box-shadow: 0 0 10px rgba(0,0,0,.2);
 }
 body a, main a:visited{
@@ -44,8 +48,8 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	padding: 0.5em;
-	background-color: var(--header-background);
-	border-radius: 10px;
+	background-color: var(--header-background-colour);
+	border-radius: var(--header-border-radius); 
 	margin: 1em 0;
 	gap: 0.5em;
 	width: auto;
@@ -56,6 +60,7 @@ header {
 	flex-direction: row;
 	align-items: center;
 	gap: 0.5em;
+	padding: 0.5em;
 	overflow: hidden;
 }
 
@@ -95,12 +100,12 @@ nav li a{
 	display: block;
 	padding: 0.5em;
 	text-decoration: none;
-	color: var(--content-faded-colour)
+	color: var(--content-faded-colour);
+	border-radius: var(--button-border-radius);
 }
 
 nav a:hover {
 	color: var(--content-base-colour);
-	border-radius: 10px;
 	background-color: rgba(0, 0, 0, 0.25);
 }
 
@@ -173,11 +178,11 @@ h3 {font-size: 1.1em;}
 code{
 	background-color: #191919;
 	padding: 0.2em 0.3em;
-	border-radius: 10px;
+	border-radius: var(--content-border-radius);
 }
 pre{
 	display: block;
-	border-radius:10px;
+	border-radius: var(--content-border-radius);
 }
 pre code{
 	display: block;
@@ -189,10 +194,11 @@ pre code{
 pre[data-lang]::before {
 	content: attr(data-lang);
 	font-size: 0.8em;
+	font-family: "Inter";
 	text-transform: uppercase;
 	background-color: var(--content-base-colour);
 	color: black;
-	border-radius: 10px 10px 0 0;
+	border-radius: var(--content-border-radius) var(--content-border-radius) 0 0;
 	padding: 0.2em 0.4rem;
 	display: block;
 }
@@ -200,7 +206,7 @@ pre[data-lang]::before {
 img
 {
 	display: block;
-	border-radius: 10px;
+	border-radius: var(--content-border-radius);
 	margin: 0 auto;
 	max-width: 100%;
 }
@@ -212,7 +218,7 @@ figure
 }
 figure img
 {
-	border-radius: 10px 10px 0 0;
+	border-radius: var(--content-border-radius) var(--content-border-radius) 0 0;
 	margin: 0;
 }
 figure figcaption
@@ -220,7 +226,7 @@ figure figcaption
 	display: table-caption;
 	caption-side: bottom;
 	background-color: var(--content-elevated-background);
-	border-radius: 0 0 10px 10px;
+	border-radius: 0 0 var(--content-border-radius) var(--content-border-radius);
 	padding: 0.5em;
 	text-align: center;
 }
@@ -228,7 +234,7 @@ figure figcaption
 
 aside
 {
-	border-radius: 10px;
+	border-radius: var(--content-border-radius);
 	background-color: var(--content-elevated-background);
 	padding: 0.5em;
 	margin: 0.5em;
@@ -249,7 +255,7 @@ blockquote{
 }
 
 table{
-	border-radius: 10px;
+	border-radius: var(--content-border-radius);
 	overflow: hidden;
 	border-spacing: 0;
 	border: 1px solid rgba(255, 255, 255, 0.15);
@@ -284,9 +290,9 @@ th{
 	padding: 0.5em;
 	align-items: center;
 	text-decoration: none;
+	border-radius: var(--button-border-radius);
 }
 .pagination-bar a:hover{
-	border-radius: 10px;
 	background-color: rgba(0, 0, 0, 0.25);
 }
 
