@@ -1,12 +1,14 @@
 <header>
-    <div class="leftside">
-        <img class="logo" src="/img/logo.png">
-        <div class="bannertext">
-            <span id="sitetitle">{{ config.title }}</span>
-            {% if config.extra.subtitle != "" %}<span id="subtitle">{{ config.extra.subtitle }}</span>{% endif %}
-        </div>
-    </div>
     <nav>
+        <a href="/">
+            <div class="leftside">
+                <img class="logo" src="/img/logo.png">
+                <div class="bannertext">
+                    <span id="sitetitle">{{ config.title }}</span>
+                    {% if config.extra.subtitle != "" %}<span id="subtitle">{{ config.extra.subtitle }}</span>{% endif %}
+                </div>
+            </div>
+        </a>
         <ul>
             {% for menu in config.extra.menu -%}
                 {% set menu_link = menu.url | replace(from="$BASE_URL", to=config.base_url) -%}

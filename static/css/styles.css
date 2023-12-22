@@ -11,6 +11,8 @@
 	--header-border-radius: 20px; /* border radius for nav bar */
 	--content-border-radius: 10px; /* border radius for content items (img, code, table, etc.) */
 	--button-border-radius: 10px; /* border radius for buttons when being hovered */
+
+	--avatar-diameter: 64px; /* height and width of the avatar */
 }
 
 /* main body stuff */
@@ -43,31 +45,25 @@ body a, main a:visited{
 
 /* styling of header and its contents */
 header {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
 	padding: 0.5em;
 	background-color: var(--header-background-colour);
 	border-radius: var(--header-border-radius); 
 	margin: 1em 0;
-	gap: 0.5em;
 	width: auto;
 }
 
 .leftside{
 	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 0.5em;
-	padding: 0.5em;
+	gap: 1em;
+	justify-content: center;
+	flex-wrap: wrap;
 	overflow: hidden;
 }
 
 .logo {
-	width:64px;
-	height:64px;
-	border-radius: 50%;
+	width: var(--avatar-diameter);
+	height: var(--avatar-diameter);
+	border-radius: 20px;
 }
 
 .bannertext {
@@ -86,17 +82,13 @@ header {
 }
 
 nav{
-	overflow-y: auto;
-}
-nav ul {
+	overflow-x: auto;
 	display: flex;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	font-weight: 500;
+	justify-content: space-between;
+	align-items: center;
 }
 
-nav li a{
+nav a{
 	display: block;
 	padding: 0.5em;
 	text-decoration: none;
@@ -107,6 +99,14 @@ nav li a{
 nav a:hover {
 	color: var(--content-base-colour);
 	background-color: rgba(0, 0, 0, 0.25);
+}
+
+nav ul {
+	display: flex;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	font-weight: 500;
 }
 
 .active {
@@ -296,9 +296,9 @@ th{
 	background-color: rgba(0, 0, 0, 0.25);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 
-	header {
+	nav {
 		justify-content: center;
 		flex-direction: column;
 	}
@@ -307,5 +307,14 @@ th{
 		justify-content: center;
 		flex-wrap: wrap;
 		align-items: center;
+	}
+
+}
+
+@media (max-width: 360px) {
+
+	.leftside{
+		flex-direction: column;
+		text-align: center;
 	}
 }
