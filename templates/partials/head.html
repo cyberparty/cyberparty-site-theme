@@ -3,7 +3,5 @@
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <link rel="stylesheet" type="text/css" href="/css/fonts.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% if page.title %}{{ page.title }} | {% elif section.title %}{{ section.title }} | {% endif %}{{ config.title }}
-    </title>
+    <title>{% if page.title %}{{ page.title }} | {% elif section.title %}{{ section.title }} | {% endif %}{{ config.title }}</title>
 </head>
