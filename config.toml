@@ -8,18 +8,22 @@ compile_sass = false
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
+minify_html = true
+generate_feed = true
+
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
 highlight_theme = "kronuz"
+external_links_target_blank = true
 
 [extra]
 # Put all your custom variables here
 subtitle = "Site Subtitle Here"
 
 menu = [
-    { name = "Index", url = "$BASE_URL" },
+    { name = "Home", url = "$BASE_URL" },
     { name = "Posts", url = "$BASE_URL/posts" },
     { name = "Projects", url = "$BASE_URL/projects" },
     { name = "Contact", url = "$BASE_URL/contact" }
