@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="titlearea">
-        <h1>{{ page.title | safe}}</h1>
-        <span class="faded">{{ page.date }}</span>
-    </div>
-    {{ page.content | safe}}
+    <hgroup>
+        <h1>{{ page.title | safe }}</h1>
+        <p class="faded">{{ page.date }}</p>
+    </hgroup>
+    <article>
+        {{ page.content | safe }}
+    </article>
 {% endblock content %}

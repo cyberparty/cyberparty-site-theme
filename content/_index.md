@@ -1,9 +1,7 @@
 +++
-title = "Home"
+title = "Welcome"
 template = "index.html"
 +++
-
-## Welcome
 
 This is the Cyberparty Site Theme! It's a Zola site theme I made for my own purposes that I could modify to my liking. As such, it will likely be changed without warning or regard for what other users may want out of it. Regardless, it's public and open source in case you want to modify or use it yourself! 
 

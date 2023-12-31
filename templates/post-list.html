@@ -2,14 +2,17 @@
 
 {% block content %}
     <h1>Posts</h1>
-    <div class="entry-list">
-        {% for page in paginator.pages %}
-        <section>
-            <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
-            <div class="faded">{{ page.date | date(format="%d/%m/%Y") }}</div>
-            {{ page.description | safe}}
-        </section>
-        {% endfor %}
-    </div>
-
+    <section>
+        <ul class="article-list">
+            {% for page in paginator.pages %}
+            <li>
+                <article class="article-entry">
+                    <h2><a href="{{ page.path | safe }}">{{ page.title }}</a></h2>
+                    {{ page.description | safe }}
+                    <span class="faded" style="font-size: 80%;">{{ page.date | date(format="%d/%m/%Y") }}</span>
+                </article>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
 {% endblock content %}

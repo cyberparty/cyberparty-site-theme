@@ -5,21 +5,21 @@
 	--content-title-colour: #f0f0f0; /* titles and headers */
 	--content-base-colour: #e7e7e7; /* main text */
 	--content-faded-colour: #a7a7a7; /* text with lower visual priority (e.g. post dates, subtitles, etc.) */
+	--content-inactive-colour: #b4b4b4; /* element considered interactive but not currently 'active' */
 	--content-blocked-colour: #717171; /* uninteractable nav element (e.g. paginator button when there's no further pages) */
 	--content-elevated-background: #383838; /* background for elements or portions thereof that are higher in visual priority or separate from the main flow (i.e. table header cells, asides, figure caption) */
 
 	--header-border-radius: 20px; /* border radius for nav bar */
 	--content-border-radius: 10px; /* border radius for content items (img, code, table, etc.) */
-	--button-border-radius: 10px; /* border radius for buttons when being hovered */
+	--button-border-radius: 15px; /* border radius for buttons when being hovered */
 
-	--avatar-diameter: 64px; /* height and width of the avatar */
+	--avatar-size: 64px; /* height and width of the avatar */
 }
 
 /* main body stuff */
 html, body
 {
 	margin: 0 auto;
-	padding: 0;
 }
 
 html
@@ -27,12 +27,13 @@ html
 	background-color: var(--outer-background-colour);
 	height: 100%;
 	scrollbar-gutter: stable;
+	padding: 0;
 }
 
 body {
 	display: flex;
-	padding: 0 1em;
 	flex-direction: column;
+	padding: 0 1em;
 	max-width: 880px;
 	min-height: 100%;
 	color: var(--content-base-colour);
@@ -43,6 +44,16 @@ body a, main a:visited{
 	color: inherit;
 }
 
+h1, h2, h3, h4, h5, h6{
+	font-weight: 600;
+	margin: 2rem 0 1rem;
+	color: var(--content-title-colour);
+}
+h1 {font-size: 2em;
+	font-weight: 700;}
+h2 {font-size: 1.25em;}
+h3 {font-size: 1.1em;}
+
 /* styling of header and its contents */
 header {
 	padding: 0.5em;
@@ -52,21 +63,22 @@ header {
 	width: auto;
 }
 
-.leftside{
+#leftside{
 	display: flex;
 	gap: 1em;
 	justify-content: center;
 	flex-wrap: wrap;
 	overflow: hidden;
+	align-items: center;
 }
 
-.logo {
-	width: var(--avatar-diameter);
-	height: var(--avatar-diameter);
+#logo {
+	width: var(--avatar-size);
+	height: var(--avatar-size);
 	border-radius: 20px;
 }
 
-.bannertext {
+#bannertext {
 	display: flex;
 	flex-direction: column;
 }
@@ -92,7 +104,7 @@ nav a{
 	display: block;
 	padding: 0.5em;
 	text-decoration: none;
-	color: var(--content-faded-colour);
+	color: var(--content-inactive-colour);
 	border-radius: var(--button-border-radius);
 }
 
@@ -127,27 +139,16 @@ nav ul {
 	margin: 0 0 0 1em;
 }
 
+main{
+	margin-bottom: auto;
+}
+
 main > :first-child
 {
 	margin-top: 0;
 }
 
-.entry-list{
-	display: flex;
-	flex-direction: column;
-	flex: 0 1 0;
-	gap: 1em;
-}
-
-footer{
-	margin-top: auto;
-	font-size: 80%;
-	padding: 1em;
-	text-align: center;
-	color: var(--content-faded-colour);
-}
-
-.titlearea
+hgroup
 {
 	display: flex;
 	flex-direction: column;
@@ -156,24 +157,34 @@ footer{
 	align-items: center;
 	margin-bottom: 1em;
 }
-.titlearea h1
+hgroup h1, p
 {
 	margin: 0;
 }
 
-section h2{
+.article-list{
+	display: flex;
+	flex-direction: column;
+	flex: 0 1 0;
+	gap: 1em;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.article-entry {
+	display: flex;
+	flex-direction: column;
+}
+.article-entry > :first-child {
 	margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6{
-	font-weight: 600;
-	margin: 2rem 0 1rem;
-	color: var(--content-title-colour);
+footer{
+	font-size: 70%;
+	margin: 1rem;
+	text-align: center;
+	color: var(--content-faded-colour);
 }
-h1 {font-size: 2em;
-	font-weight: 700;}
-h2 {font-size: 1.25em;}
-h3 {font-size: 1.1em;}
 
 code{
 	background-color: #191919;
@@ -193,7 +204,7 @@ pre code{
 
 pre[data-lang]::before {
 	content: attr(data-lang);
-	font-size: 0.8em;
+	font-size: 80%;
 	font-family: "Inter";
 	text-transform: uppercase;
 	background-color: var(--content-base-colour);
@@ -203,7 +214,7 @@ pre[data-lang]::before {
 	display: block;
 }
 
-img
+img, video
 {
 	display: block;
 	border-radius: var(--content-border-radius);
@@ -225,9 +236,10 @@ figure figcaption
 {
 	display: table-caption;
 	caption-side: bottom;
+	font-size: 80%;
 	background-color: var(--content-elevated-background);
 	border-radius: 0 0 var(--content-border-radius) var(--content-border-radius);
-	padding: 0.5em;
+	padding: 0.4em;
 	text-align: center;
 }
 
@@ -258,21 +270,51 @@ table{
 	border-radius: var(--content-border-radius);
 	overflow: hidden;
 	border-spacing: 0;
-	border: 1px solid rgba(255, 255, 255, 0.15);
+	border: 1px solid var(--content-elevated-background);
 }
 
 th, td{
-	padding: 0.25em;
+	padding: 0.5em;
 }
 
 th{
 	background-color: var(--content-elevated-background);
 }
 
+details {
+	overflow: hidden;
+	overflow-wrap: break-word;
+	border: 1px solid var(--content-elevated-background);
+	border-radius: var(--content-border-radius);
+	padding: 0.5em;
+	width: fit-content;
+}
+
+details summary {
+	cursor: pointer;
+	margin: -0.5em;
+	padding: 0.5em;
+	background-color: var(--content-elevated-background);
+	max-width: 100%;
+}
+
+details summary > * { 
+	display: inline;
+}
+
+details[open] summary {
+	margin-bottom: 0.5em;
+	border-bottom: 1px solid var(--content-elevated-background);
+}
+
 .footnote-definition {
-	border-top: 1px solid var(--content-base-colour);
 	padding: 1em 0;
 }
+
+div:nth-child(1 of .footnote-definition) {
+	border-top: 1px solid var(--content-base-colour);
+}
+
 .footnote-definition p{
 	display: inline-block;
 	margin: auto;
@@ -283,8 +325,8 @@ th{
 	align-content: center;
 	justify-content: space-around;
 	margin: 1em;
-	margin-top: auto;
 }
+
 .pagination-bar a,.pagination-bar span{
 	display: flex;
 	padding: 0.5em;
@@ -313,7 +355,7 @@ th{
 
 @media (max-width: 360px) {
 
-	.leftside{
+	#leftside{
 		flex-direction: column;
 		text-align: center;
 	}
