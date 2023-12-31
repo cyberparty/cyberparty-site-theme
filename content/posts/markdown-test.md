@@ -25,14 +25,24 @@ Mauris in aliquam sem fringilla ut morbi tincidunt augue. Volutpat odio facilisi
 Leo vel fringilla est ullamcorper eget nulla facilisi etiam. Lacinia quis vel eros donec ac odio tempor. Amet porttitor eget dolor morbi non. Ut enim blandit volutpat maecenas volutpat blandit. Id faucibus nisl tincidunt eget. Tellus molestie nunc non blandit massa enim nec. Turpis cursus in hac habitasse. Suscipit adipiscing bibendum est ultricies integer quis auctor. At urna condimentum mattis pellentesque id. Velit dignissim sodales ut eu.
 
 ## Images
-{{ img(src="/img/photo.png") }}
+
+{% figure(src="/img/photo.png") %}
+A cute corgi! Image courtesy of [Nataliya Vaitkevich](https://www.pexels.com/@n-voitkevich/).
+{% end %}
+
+## Videos
+
+{{ vid(src="/vid/corgi.webm") }}
+Video courtesy of [Ron Lach](https://www.pexels.com/@ron-lach/).
 
 ## Blockquote
+
 {% quote(author="Cave Johnson") %}
 When life gives you lemons? Don't make lemonade. Make life take the lemons back! Get mad! 'I don't want your damn lemons! What am I supposed to do with these?' Demand to see life's manager! Make life rue the day it thought it could give Cave Johnson lemons! Do you know who I am? I'm the man who's going to burn your house down! With the lemons! I'm going to get my engineers to invent a combustible lemon that burns your house down!
 {% end %}
 
 ## Code
+
 ### Inline
 `sudo rm -rf /`
 
@@ -42,21 +52,23 @@ use std::io;
 use rand::Rng;
 
 fn main() {
-    println!("Enter a number between 1 and 10!");
-
+    let range = 1..=10;
     let mut rng = rand::thread_rng();
-    let random_num: u8 = rng.gen_range(1..=10);
+    let random_num: u8 = rng.gen_range(range.clone());
+
+    println!("Enter a number between 1 and 10!");
 
     let mut guess_string = String::new();
     io::stdin().read_line(&mut guess_string).expect("Read failed");
     let guess_num: u8 = guess_string.trim().parse().expect("Not a valid number");
 
     if guess_num == random_num {
-        println!("Correct!")
-    } else {
+        println!("Correct!");
+    } else if range.contains(&guess_num) {
         println!("Incorrect!")
+    } else {
+        println!("Not in range!");
     }
-
 }
 ```
 
@@ -122,6 +134,15 @@ Left Cell 2 | Right Cell 2
     - Sandra
     - Mary
   - Jessica
+
+## Misc.
+
+<details>
+  <summary>Details drop-down. Great for content warnings, spoilers, etc.</summary>
+  ...Or for the perfect punchline delivery!
+</details>
+
+
 
 ## Citations
 
