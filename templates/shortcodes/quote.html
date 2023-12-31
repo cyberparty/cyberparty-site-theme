@@ -1,4 +1,4 @@
 <blockquote>
-    <p>{{ body }}</p>
-    <cite>-{{ author }}</cite>
+    <p>{{ body | markdown(inline=true) | safe }}</p>
+    <cite>-{{ author | markdown(inline=true) | safe }}</cite>
 </blockquote>
